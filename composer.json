@@ -1,0 +1,9 @@
+{
+    "name": "jo_dk/local.atelie",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "require": {}
+}
