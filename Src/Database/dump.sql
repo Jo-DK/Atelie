@@ -24,11 +24,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Atelie`.`Participantes` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `CPF` bigINT(11) NOT NULL,
-  `Nome` VARCHAR(45) NULL,
+  `cpf` bigINT(11) NOT NULL,
+  `nome` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `CPF_UNIQUE` (`CPF` ASC) VISIBLE)
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE)
 ENGINE = InnoDB;
 
 
