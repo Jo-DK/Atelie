@@ -11,5 +11,3 @@ insert into Atelie.Participantes (CPF, Nome, email) values(64058591005, 'Magali'
 insert into Atelie.Participantes (CPF, Nome, email) values(51217757090, 'Cascão', 'Cascão@turmadamonica.com');
 
 
-insert into Atelie.
-
