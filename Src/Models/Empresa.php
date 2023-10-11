@@ -13,7 +13,7 @@
         public function __construct()
         {
             parent::__construct(
-                'Empresas', $this->fields, 'idEmpresa', false);
+                'Empresas', $this->fields, 'id', false);
         }
 
         public function getAll(){
