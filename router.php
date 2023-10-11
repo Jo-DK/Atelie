@@ -3,7 +3,6 @@
 
     use CoffeeCode\Router\Router;
 
-
     $router = new Router('http://localhost');
 
     $router->namespace('Src\Controllers');
@@ -11,7 +10,7 @@
     $router->group(null);
 
     // Empresas
-
+    
     $router->get('/', 'EmpresasController:home');
 
     $router->get('/Empresas', 'EmpresasController:index');
@@ -26,34 +25,34 @@
 
 
 
-    // Participantes
+    // // Participantes
 
-    $router->get('/', 'ParticipantesController:home');
+    // $router->get('/', 'ParticipantesController:home');
 
-    $router->get('/Participantes', 'ParticipantesController:index');
+    // $router->get('/Participantes', 'ParticipantesController:index');
 
-    $router->get('/Participantes/{id}', 'ParticipantesController:show');
+    // $router->get('/Participantes/{id}', 'ParticipantesController:show');
 
-    $router->delete('/Participantes/{id}', 'ParticipantesController:destroy');
+    // $router->delete('/Participantes/{id}', 'ParticipantesController:destroy');
 
-    $router->put('/Participantes/{id}', 'ParticipantesController:edit');
+    // $router->put('/Participantes/{id}', 'ParticipantesController:edit');
 
-    $router->post('/Participantes', 'ParticipantesController:store');
+    // $router->post('/Participantes', 'ParticipantesController:store');
 
 
-    // Campanhas
+    // // Campanhas
 
-    $router->get('/', 'CampanhasController:home');
+    // $router->get('/', 'CampanhasController:home');
 
-    $router->get('/Campanhas', 'CampanhasController:index');
+    // $router->get('/Campanhas', 'CampanhasController:index');
 
-    $router->get('/Campanhas/{id}', 'CampanhasController:show');
+    // $router->get('/Campanhas/{id}', 'CampanhasController:show');
 
-    $router->delete('/Campanhas/{id}', 'CampanhasController:destroy');
+    // $router->delete('/Campanhas/{id}', 'CampanhasController:destroy');
 
-    $router->put('/Campanhas/{id}', 'CampanhasController:edit');
+    // $router->put('/Campanhas/{id}', 'CampanhasController:edit');
 
-    $router->post('/Campanhas', 'CampanhasController:store');
+    // $router->post('/Campanhas', 'CampanhasController:store');
     
 
     $router->dispatch();
