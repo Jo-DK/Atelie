@@ -1,7 +1,7 @@
 -- -----------------------------------------------------
 -- Schema Atelie
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `Atelie` DEFAULT CHARACTER SET utf8 ;
+CREATE Database IF NOT EXISTS `Atelie` DEFAULT CHARACTER SET utf8 ;
 USE `Atelie` ;
 
 -- -----------------------------------------------------
@@ -9,11 +9,11 @@ USE `Atelie` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Atelie`.`Empresas` (
   `idEmpresas` INT NOT NULL AUTO_INCREMENT,
-  `cnpj` INT(2) NOT NULL,
+  `cnpj` bigINT(14) NOT NULL,
   `razao_social` VARCHAR(45) NULL,
   `responsavel` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
-  `telefone` INT(2) NULL,
+  `telefone` bigINT(11) NULL,
   PRIMARY KEY (`idEmpresas`),
   UNIQUE INDEX `cnpj_UNIQUE` (`cnpj` ASC) VISIBLE)
 ENGINE = InnoDB;
@@ -24,7 +24,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Atelie`.`Participantes` (
   `idParticipantes` INT NOT NULL AUTO_INCREMENT,
-  `CPF` INT(2) NOT NULL,
+  `CPF` bigINT(11) NOT NULL,
   `Nome` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   PRIMARY KEY (`idParticipantes`),

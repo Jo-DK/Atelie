@@ -1,9 +1,12 @@
 {
-    "name": "jo_dk/local.atelie",
+    "name": "jo_dk/atelie",
     "autoload": {
         "psr-4": {
-            "src\\": "src/"
+            "Src\\": "Src/"
         }
     },
-    "require": {}
+    "require": {
+        "coffeecode/datalayer": "^1.1",
+        "coffeecode/router": "^1.0"
+    }
 }
