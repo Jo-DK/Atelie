@@ -12,12 +12,6 @@ use Src\Validation\Validation;
 class EmpresasController extends Controller
 {
 
-    // public static function home()
-    // {
-    //     require 'Public/template.php';
-    // }
-
-
     public static function index()
     {
         $Empresa = new Empresa();
@@ -38,15 +32,18 @@ class EmpresasController extends Controller
         $Empresa->email         = Validation::request('email', ['email']);
         $Empresa->telefone      = Validation::request('telefone', ['telefone']);
         $Empresa->responsavel   = Validation::request('responsavel', ['string']);
+        
+        if(Empresa::alreadyExists((int) $Empresa->cnpj))
+            self::returnUnprocessable("Já Existe esse CNPJ cadastrado!");
 
-        $id = $Empresa->save();
+        $Empresa->save();
 
         if ($Empresa->fail())
             self::returnUnprocessable($Empresa->fail()->getMessage());
 
 
         self::returnCreated(
-            ['id' => $id],
+            ['id' => $Empresa->id],
             'Empresa adicionada com sucesso'
         );
     }
@@ -72,16 +69,19 @@ class EmpresasController extends Controller
     public static function edit($data)
     {
 
+        $_REQUEST = (array) json_decode(file_get_contents("php://input"));
+
         $Empresa = (new Empresa())->findById($data['id']);
 
         if (empty($Empresa->id))
-            self::returnNotFound('Não localizado veiculo para este ID');
+            self::returnNotFound('Não localizada Empresa para este ID');
 
         $Empresa->cnpj          = Validation::request('cnpj', ['cnpj']);
         $Empresa->razao_social  = Validation::request('razao_social', ['string']);
         $Empresa->email         = Validation::request('email', ['email']);
         $Empresa->telefone      = Validation::request('telefone', ['telefone']);
         $Empresa->responsavel   = Validation::request('responsavel', ['string']);
+
         $Empresa->save();
         
         if ($Empresa->fail()) {
