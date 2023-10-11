@@ -27,8 +27,6 @@
 
     // Participantes
 
-    $router->get('/', 'ParticipantesController:home');
-
     $router->get('/Participantes', 'ParticipantesController:index');
 
     $router->get('/Participantes/{id}', 'ParticipantesController:show');
@@ -40,19 +38,17 @@
     $router->post('/Participantes', 'ParticipantesController:store');
 
 
-    // // Campanhas
+    // Campanhas
 
-    // $router->get('/', 'CampanhasController:home');
+    $router->get('/Empresa/{empresa_id}/Campanhas', 'CampanhasController:index');
 
-    // $router->get('/Campanhas', 'CampanhasController:index');
+    $router->get('/Campanhas/{id}', 'CampanhasController:show');
 
-    // $router->get('/Campanhas/{id}', 'CampanhasController:show');
+    $router->delete('/Campanhas/{id}', 'CampanhasController:destroy');
 
-    // $router->delete('/Campanhas/{id}', 'CampanhasController:destroy');
+    $router->put('/Campanhas/{id}', 'CampanhasController:edit');
 
-    // $router->put('/Campanhas/{id}', 'CampanhasController:edit');
-
-    // $router->post('/Campanhas', 'CampanhasController:store');
+    $router->post('/Campanhas', 'CampanhasController:store');
     
     /**
      * Group Error
