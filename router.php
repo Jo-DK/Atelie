@@ -4,10 +4,10 @@
     use CoffeeCode\Router\Router;
 
     $router = new Router('http://localhost');
+    
+    
 
     $router->namespace('Src\Controllers');
-
-    $router->group(null);
 
     // Empresas
     
@@ -54,10 +54,19 @@
 
     // $router->post('/Campanhas', 'CampanhasController:store');
     
+    /**
+     * Group Error
+     * This monitors all Router errors. Are they: 400 Bad Request, 404 Not Found, 405 Method Not Allowed and 501 Not Implemented
+     */
+    $router->group("error")->namespace("Src/Empresas");
+    $router->get("/{errcode}", "Coffee:notFound");
 
     $router->dispatch();
 
     
-    if($router->error()){
+    /*
+    * Redirect all errors
+    */
+    if ($router->error()) {
         dd($router->error());
     }

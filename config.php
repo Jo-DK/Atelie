@@ -4,7 +4,7 @@
         'driver' => 'mysql',
         'host' => '127.0.0.1',
         'port' => '3306',
-        'dbname' => 'Atelie',
+        'dbname' => 'atelie',
         'username' => 'root',
         'passwd' => '1234',
         "options" => [

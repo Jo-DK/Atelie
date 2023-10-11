@@ -13,7 +13,7 @@ function dd($var)
      * Se estiver em Produção ele não estoura nada
      */
     foreach($list as $c => $var ):
-          var_dump($c, $var);
+          var_dump($var);
     endforeach;
     echo '<br>' . PHP_EOL;
     die();
