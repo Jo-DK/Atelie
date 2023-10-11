@@ -25,19 +25,19 @@
 
 
 
-    // // Participantes
+    // Participantes
 
-    // $router->get('/', 'ParticipantesController:home');
+    $router->get('/', 'ParticipantesController:home');
 
-    // $router->get('/Participantes', 'ParticipantesController:index');
+    $router->get('/Participantes', 'ParticipantesController:index');
 
-    // $router->get('/Participantes/{id}', 'ParticipantesController:show');
+    $router->get('/Participantes/{id}', 'ParticipantesController:show');
 
-    // $router->delete('/Participantes/{id}', 'ParticipantesController:destroy');
+    $router->delete('/Participantes/{id}', 'ParticipantesController:destroy');
 
-    // $router->put('/Participantes/{id}', 'ParticipantesController:edit');
+    $router->put('/Participantes/{id}', 'ParticipantesController:edit');
 
-    // $router->post('/Participantes', 'ParticipantesController:store');
+    $router->post('/Participantes', 'ParticipantesController:store');
 
 
     // // Campanhas
