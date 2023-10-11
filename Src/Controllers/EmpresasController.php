@@ -22,7 +22,6 @@ class EmpresasController extends Controller
         );
     }
 
-
     public static function store()
     {
 
@@ -81,6 +80,9 @@ class EmpresasController extends Controller
         $Empresa->email         = Validation::request('email', ['email']);
         $Empresa->telefone      = Validation::request('telefone', ['telefone']);
         $Empresa->responsavel   = Validation::request('responsavel', ['string']);
+
+        if(Empresa::alreadyExists((int) $Empresa->cnpj, $Empresa->id))
+            self::returnUnprocessable("Já Existe esse CNPJ cadastrado!");
 
         $Empresa->save();
         

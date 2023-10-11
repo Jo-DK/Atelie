@@ -25,10 +25,11 @@
             return $return;     
         }
 
-        public static function alreadyExists(int $cnpj): bool
+        public static function alreadyExists(int $cnpj, int $id = null): bool
         {
             $Empresa = new self;
-            return is_array($Empresa->find("cnpj = :cnpj", "cnpj=$cnpj")->fetch(true));
+            $fetch = $Empresa->find("cnpj = :cnpj", "cnpj=$cnpj")->fetch(true);
+            return  $fetch && $fetch[0]->id !== $id;
         }
 
     }
