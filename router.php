@@ -49,7 +49,16 @@
     $router->put('/Campanhas/{id}', 'CampanhasController:edit');
 
     $router->post('/Campanhas', 'CampanhasController:store');
+
     
+    // Adesao
+
+    $router->post('/Adesao', 'AdesaoController:store');
+
+    $router->delete('/Adesao', 'AdesaoController:destroy');
+    
+
+
     /**
      * Group Error
      * This monitors all Router errors. Are they: 400 Bad Request, 404 Not Found, 405 Method Not Allowed and 501 Not Implemented
