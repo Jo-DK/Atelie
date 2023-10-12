@@ -30,11 +30,10 @@
 
 <p align="center">
   <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
+  <a href="#rocket-technologies">Tecnologias</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requisitos</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Iniciando</a> &#xa0; | &#xa0;
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
   <a href="https://github.com/Jo-DK" target="_blank">Author</a>
 </p>
 
@@ -43,12 +42,17 @@
 ## :dart: Sobre ##
 
 Este é apenas uma aplicação teste para um processo Seletivo, e contém:
+
 :checkered_flag: APIs CRUD Para Empresas,
+
 :checkered_flag: APIs CRUD Para Campanhas,
+
 :checkered_flag: APIs CRUD Para Participantes,
+
 :checkered_flag: APIs de Adesão, para vincular e desvincular Participantes
 
-## :rocket: Technologies ##
+
+## :rocket: Tecnologias ##
 
 The following tools were used in this project:
 
@@ -60,7 +64,7 @@ The following tools were used in this project:
 - [CoffeeCode-Router](https://packagist.org/packages/coffeecode/router)
 
 
-## :white_check_mark: Requirements ##
+## :white_check_mark: Requisitos ##
 
 :checkered_flag: É necessário editar o arquivo [Config.php](https://github.com/Jo-DK/Atelie/blob/main/config.php), com os parâmetros do seu banco local.
 
@@ -71,7 +75,7 @@ e um arquivo de [Seed](https://github.com/Jo-DK/Atelie/blob/main/Src/Database/se
 
 :checkered_flag: Há ainda um arquivo Json do [Postman](https://github.com/Jo-DK/Atelie/blob/main/Atelie.postman_collection.json) com alguns exemplos de uso das APIs.
 
-## :checkered_flag: Starting ##
+## :checkered_flag: Iniciando ##
 
 ```bash
 # Clone this project
@@ -88,14 +92,13 @@ $ composer install
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1: Para as Rotas eu utilizei um plugin da [CoffeCode](https://packagist.org/packages/coffeecode), para não reinventar a roda, 
+:heavy_check_mark: Para as Rotas eu utilizei um plugin da [CoffeCode](https://packagist.org/packages/coffeecode), para não reinventar a roda, 
 Os cadastros das Rotas estão em [rotas.php](https://github.com/Jo-DK/Atelie/blob/main/router.phpl)
 
-:heavy_check_mark: Feature 2: Sistema de [validação](https://github.com/Jo-DK/Atelie/tree/main/Src/Validation) dinânimo que permite o cadastro de diversas 
+:heavy_check_mark: Sistema de [validação](https://github.com/Jo-DK/Atelie/tree/main/Src/Validation) dinânimo que permite o cadastro de diversas 
 [regras](https://github.com/Jo-DK/Atelie/blob/main/Src/Validation/Rules.php) como CPF, CNPJ e Email.
 
-:heavy_check_mark: Feature 3: As [ORMs](https://github.com/Jo-DK/Atelie/tree/main/Src/Models) utilizam um Datalayer também da CoffeCode, que também prove a classe Abstrata e uma Conexão PDO.
-
+:heavy_check_mark: As [ORMs](https://github.com/Jo-DK/Atelie/tree/main/Src/Models) utilizam um Datalayer também da CoffeCode, que também prove a classe Abstrata e uma Conexão PDO.
 
 
 
