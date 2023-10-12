@@ -1,35 +1,55 @@
 <?php
 
-    namespace Src\Models;
+/**
+ * ORM para Empresas
+ * 
+ * @author Jonathan
+ * @since 2023-10-11
+ */
 
-    use CoffeeCode\DataLayer\DataLayer;
+namespace Src\Models;
 
-    class Empresa extends Datalayer
+use CoffeeCode\DataLayer\DataLayer;
+
+class Empresa extends Datalayer
+{
+    private $fields = [
+        'cnpj'
+    ];
+    
+    public function __construct()
     {
-        private $fields = [
-            'cnpj'
-        ];
-        
-        public function __construct()
-        {
-            parent::__construct(
-                'Empresas', $this->fields, 'id', false);
-        }
+        parent::__construct(
+            'Empresas', $this->fields, 'id', false);
+    }
 
-        public function getAll(){
-            $list = $this->find()->fetch(true);
-            $return = [];
-            foreach($list as $item)
-                $return[] = $item->data();
+    /**
+     * Pega todas as empresas cadastradas
+     */
+    public function getAll(){
+        $list = $this->find()->fetch(true);
+        $return = [];
+        foreach($list as $item)
+            $return[] = $item->data();
 
-            return $return;     
-        }
+        return $return;     
+    }
 
-        public static function alreadyExists(int $cnpj, int $id = null): bool
-        {
-            $Empresa = new self;
-            $fetch = $Empresa->find("cnpj = :cnpj", "cnpj=$cnpj")->fetch(true);
-            return  $fetch && $fetch[0]->id !== $id;
-        }
+    /**
+     * Verifica se ja existe o CNPJ no Banco,
+     * Se caso ja exista, e for uma Edição, enviamos o id da empresa editada para
+     * verificar se não é o mesmo dono
+     * 
+     * @param int $cnpj
+     * @param int|Null $id
+     * 
+     * @return Bool
+     */
+    public static function alreadyExists(int $cnpj, int $id = null): bool
+    {
+        $Empresa = new self;
+        $fetch = $Empresa->find("cnpj = :cnpj", "cnpj=$cnpj")->fetch(true);
+        return  $fetch && $fetch[0]->id !== $id;
+    }
 
     }

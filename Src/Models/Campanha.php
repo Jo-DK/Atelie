@@ -1,29 +1,44 @@
 <?php
 
-    namespace Src\Models;
+/**
+ * ORM para Campanhas
+ * 
+ * @author Jonathan
+ * @since 2023-10-11
+ */
 
-    use CoffeeCode\DataLayer\DataLayer;
+namespace Src\Models;
 
-    class Campanha extends Datalayer
+use CoffeeCode\DataLayer\DataLayer;
+
+class Campanha extends Datalayer
+{
+    /** Campos obrigatórios */
+    private $fields = [
+        'empresa_id',
+        'titulo'
+    ];
+    
+    public function __construct()
     {
-        private $fields = [
-            'empresa_id',
-            'titulo'
-        ];
-        
-        public function __construct()
-        {
-            parent::__construct(
-                'Campanhas', $this->fields, 'id', false);
-        }
-
-        public function getAll(int $empresa_id){
-            $list = $this->find("empresa_id = :empresa_id", "empresa_id=$empresa_id")->fetch(true);
-            $return = [];
-            foreach($list as $item)
-                $return[] = $item->data();
-
-            return $return;
-        }
-
+        parent::__construct(
+            'Campanhas', $this->fields, 'id', false);
     }
+
+    /** 
+     * Faz uma query para pegar todos as empresas,
+     * Como o Datalayer retorna uma array de Objetos Datalayer, eu também faço um foreach
+     * para pegar somente os dados de cada objeto 
+     * 
+     * @param $empresa_id
+     * */
+    public function getAll(int $empresa_id){
+        $list = $this->find("empresa_id = :empresa_id", "empresa_id=$empresa_id")->fetch(true);
+        $return = [];
+        foreach($list as $item)
+            $return[] = $item->data();
+
+        return $return;
+    }
+
+}
