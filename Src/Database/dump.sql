@@ -51,7 +51,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Atelie`.`Campanha_Participantes` (
   `campanha_id` INT NOT NULL,
-  `participante_id` VARCHAR(45) NOT NULL,
+  `participante_id` int NOT NULL,
   `dt_adesao` DATE NULL,
   PRIMARY KEY (`campanha_id`, `participante_id`))
 ENGINE = InnoDB;
