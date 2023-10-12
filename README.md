@@ -1,27 +1,23 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Local Atelie" />
+  <img src="./.github/app.gif" alt="Ateliê da Propaganda" />
 
   &#xa0;
 
   <!-- <a href="https://localatelie.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Local Atelie</h1>
+<h1 align="center">Ateliê da Propaganda</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/local-atelie?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/badge/Language-PHP-blue">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/local-atelie?color=56BEB8">
+  <img alt="Github issues" src="https://img.shields.io/badge/API-RESTFull-black">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/local-atelie?color=56BEB8">
+  <img alt="Github languages" src="https://img.shields.io/badge/Database-MySql-red" />
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/local-atelie?color=56BEB8">
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/Jo-DK/local-atelie?color=56BEB8" /> -->
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/local-atelie?color=56BEB8" /> -->
-
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/local-atelie?color=56BEB8" /> -->
-
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/local-atelie?color=56BEB8" /> -->
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/Jo-DK/local-atelie?color=56BEB8" /> -->
 </p>
 
 <!-- Status -->
@@ -33,20 +29,20 @@
 <hr> -->
 
 <p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#dart-about">Sobre</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="https://github.com/Jo-DK" target="_blank">Author</a>
 </p>
 
 <br>
 
 ## :dart: About ##
 
-Describe your project
+Este é apenas um CRUD teste para um processo Seletivo, 
 
 ## :sparkles: Features ##
 
@@ -58,40 +54,43 @@ Describe your project
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [PHP](https://www.php.net)
+- [Composer](https://getcomposer.org)
+- [DataLayer](https://packagist.org/packages/coffeecode/datalayer)
+- [Router](https://packagist.org/packages/coffeecode/router)
+
 
 ## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+:checkered_flag: PHP,
+:checkered_flag: MySql,
+:checkered_flag: Composer,
+:checkered_flag: GIT,
+
+Contém um arquivo de [Dump](https://github.com/Jo-DK/Atelie/blob/main/Src/Database/dump.sql) 
+e um arquivo de [Seed](https://github.com/Jo-DK/Atelie/blob/main/Src/Database/seed.sql) dentro da pasta ## Src/Database/ ##.
+
+Também precisará rodar o composer para utilizar do ## autoload PSR-4 ## e dos plugins de ## Router ## e ## DataLayer ##.
+
+Há ainda um arquivo Json do [Postman](https://github.com/Jo-DK/Atelie/blob/main/Atelie.postman_collection.json) com alguns exemplos de uso das APIs.
 
 ## :checkered_flag: Starting ##
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/local-atelie
+$ git clone https://github.com/Jo-DK/local-atelie
 
 # Access
 $ cd local-atelie
 
 # Install dependencies
-$ yarn
+$ composer install
 
-# Run the project
-$ yarn start
-
-# The server will initialize in the <http://localhost:3000>
+# Na minha máquina não criei Virtual Host, usando apenas no  <http://localhost> mesmo, como podem ver no Postman
 ```
 
-## :memo: License ##
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
-
-
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/Jo-DK" target="_blank">Jonathan Nunes</a>
 
 &#xa0;
 
