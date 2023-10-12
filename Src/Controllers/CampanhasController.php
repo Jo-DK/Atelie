@@ -2,6 +2,9 @@
 
 /**
  * Controller para Campanhas
+ * 
+ * @author Jonathan Nunes
+ * @since 2023-11-10
  */
 
 namespace Src\Controllers;
@@ -12,6 +15,10 @@ use Src\Validation\Validation;
 class CampanhasController extends Controller
 {
 
+    /**
+     * Retorna todas as campanhas vinculadas a uma Empresa
+     * @param empresa_id
+     */
     public static function index($data)
     {
         $Campanha = new Campanha();
@@ -22,6 +29,9 @@ class CampanhasController extends Controller
         );
     }
 
+    /**
+     * Salva nova Campanha no banco
+     */
     public static function store()
     {
 
@@ -44,6 +54,10 @@ class CampanhasController extends Controller
     }
 
 
+    /**
+     * Exibe os dados de uma Campanha
+     * @param id
+     */
     public static function show($data)
     {
         $Campanha = (new Campanha())->findById($data['id']);
@@ -61,11 +75,12 @@ class CampanhasController extends Controller
     }
 
 
+    /**
+     * Edita uma campanha
+     * @param id
+     */
     public static function edit($data)
     {
-
-        $_REQUEST = (array) json_decode(file_get_contents("php://input"));
-
         $Campanha = (new Campanha())->findById($data['id']);
 
         if (empty($Campanha->id))
@@ -88,10 +103,12 @@ class CampanhasController extends Controller
         );
     }
 
-
+    /**
+     * Remove uma campanha do banco
+     * @param id
+     */
     public static function destroy($data)
     {
-
         $Campanha = (new Campanha())->findById($data['id']);
 
         if (empty($Campanha->id))

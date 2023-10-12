@@ -2,6 +2,9 @@
 
 /**
  * Controller para Participantes
+ * 
+ * @author Jonathan Nunes
+ * @since 2023-11-10
  */
 
 namespace Src\Controllers;
@@ -12,6 +15,9 @@ use Src\Validation\Validation;
 class ParticipantesController extends Controller
 {
 
+    /**
+     * Retorna a lista de Participantes cadastrados
+     */
     public static function index()
     {
         $Participante = new Participante();
@@ -22,9 +28,12 @@ class ParticipantesController extends Controller
         );
     }
 
+    /**
+     * Cria Novo Participante
+     * Verifica se o CPF já esta em uso no banco
+     */
     public static function store()
     {
-
         $Participante = new Participante();
         $Participante->cpf      = Validation::request('cpf', ['cpf']);
         $Participante->nome     = Validation::request('nome', ['string']);
@@ -45,6 +54,10 @@ class ParticipantesController extends Controller
     }
 
 
+    /**
+     * Exibe os dados de um Participante
+     * @param id
+     */
     public static function show($data)
     {
         $Participante = (new Participante())->findById($data['id']);
@@ -61,12 +74,14 @@ class ParticipantesController extends Controller
             );
     }
 
-
+    /**
+     * Edita um Participante
+     * Caso esteja editando CPF, verifica se o novo CPF não já esta em uso no banco
+     * 
+     * @param id
+     */
     public static function edit($data)
     {
-
-        $_REQUEST = (array) json_decode(file_get_contents("php://input"));
-
         $Participante = (new Participante())->findById($data['id']);
 
         if (empty($Participante->id))
@@ -90,10 +105,14 @@ class ParticipantesController extends Controller
         );
     }
 
-
+    /**
+     * Remove Participante do banco
+     * @param id
+     * 
+     * PS: Esse aqui poderia ser usado Soft Delete
+     */
     public static function destroy($data)
     {
-
         $Participante = (new Participante())->findById($data['id']);
 
         if (empty($Participante->id))

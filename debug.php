@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Função para debugar
+ */
 function dd($var)
 {
     $list = func_get_args();

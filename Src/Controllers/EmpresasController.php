@@ -2,6 +2,9 @@
 
 /**
  * Controller para Empresas
+ *  
+ * @author Jonathan Nunes
+ * @since 2023-11-10
  */
 
 namespace Src\Controllers;
@@ -12,6 +15,9 @@ use Src\Validation\Validation;
 class EmpresasController extends Controller
 {
 
+    /**
+     * Retorna todas as empresas cadastradas
+     */
     public static function index()
     {
         $Empresa = new Empresa();
@@ -22,9 +28,12 @@ class EmpresasController extends Controller
         );
     }
 
+    /**
+     * Cria nova empresa
+     * após verificar se CNPJ já não existe no banco
+     */
     public static function store()
     {
-
         $Empresa = new Empresa();
         $Empresa->cnpj          = Validation::request('cnpj', ['cnpj']);
         $Empresa->razao_social  = Validation::request('razao_social', ['string']);
@@ -47,7 +56,10 @@ class EmpresasController extends Controller
         );
     }
 
-
+    /**
+     * Exibe os dados de uma Empresa
+     * @param id
+     */
     public static function show($data)
     {
         $Empresa = (new Empresa())->findById($data['id']);
@@ -64,12 +76,14 @@ class EmpresasController extends Controller
             );
     }
 
-
+    /**
+     * Edita uma empresa
+     * Verifica se, caso esteja editando CNPJ, se o novo CNPJ não já esta em uso no banco
+     * 
+     * @param id
+     */
     public static function edit($data)
     {
-
-        $_REQUEST = (array) json_decode(file_get_contents("php://input"));
-
         $Empresa = (new Empresa())->findById($data['id']);
 
         if (empty($Empresa->id))
@@ -95,10 +109,14 @@ class EmpresasController extends Controller
         );
     }
 
-
+    /**
+     * Remove empresa do banco
+     * @param id
+     * 
+     * PS: Esse aqui poderia ser usado Soft Delete
+     */
     public static function destroy($data)
     {
-
         $Empresa = (new Empresa())->findById($data['id']);
 
         if (empty($Empresa->id))

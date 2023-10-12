@@ -1,5 +1,9 @@
 <?php
 
+    /**
+     * Constante necessária para acesso ao Banco
+     */
+
     define('DATA_LAYER_CONFIG', [
         'driver' => 'mysql',
         'host' => '127.0.0.1',

@@ -2,6 +2,9 @@
 
 /**
  * Controller para Campanhas
+ * 
+ * @author Jonathan Nunes
+ * @since 2023-11-10
  */
 
 namespace Src\Controllers;
@@ -11,6 +14,10 @@ use Src\Validation\Validation;
 
 class AdesaoController extends Controller
 {
+    /**
+     * Verifica se o vinculo entre participante e campanha já existe, 
+     * depois salva o novo vinculo na tabela Campanha_Participantes
+     */
     public static function store()
     {
 
@@ -29,9 +36,13 @@ class AdesaoController extends Controller
         );
     }
 
+    /**
+     * Verifica se o vinculo já existe
+     * depois remove do banco
+     */
     public static function destroy()
     {
-        $_REQUEST = (array) json_decode(file_get_contents("php://input"));
+        
         $Adesao = new Adesao();
         $campanha_id        = Validation::request('campanha_id', ['integer']);
         $participante_id    = Validation::request('participante_id', ['integer']);
