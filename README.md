@@ -29,7 +29,7 @@
 <hr> -->
 
 <p align="center">
-  <a href="#dart-about">Sobre</a> &#xa0; | &#xa0; 
+  <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
@@ -40,39 +40,25 @@
 
 <br>
 
-## :dart: About ##
+## :dart: Sobre ##
 
-Este é apenas um CRUD teste para um processo Seletivo, 
-
-## :sparkles: Features ##
-
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
-
-## :rocket: Technologies ##
-
-The following tools were used in this project:
-
-- [PHP](https://www.php.net)
-- [Composer](https://getcomposer.org)
-- [DataLayer](https://packagist.org/packages/coffeecode/datalayer)
-- [Router](https://packagist.org/packages/coffeecode/router)
+Este é apenas uma aplicação teste para um processo Seletivo, e contém:
+:checkered_flag: APIs CRUD Para Empresas,
+:checkered_flag: APIs CRUD Para Campanhas,
+:checkered_flag: APIs CRUD Para Participantes,
+:checkered_flag: APIs de Adesão, para vincular e desvincular Participantes
 
 
 ## :white_check_mark: Requirements ##
 
-:checkered_flag: PHP,
-:checkered_flag: MySql,
-:checkered_flag: Composer,
-:checkered_flag: GIT,
+:checkered_flag: É necessário editar o arquivo [Config.php](https://github.com/Jo-DK/Atelie/blob/main/config.php), com os parâmetros do seu banco local.
 
-Contém um arquivo de [Dump](https://github.com/Jo-DK/Atelie/blob/main/Src/Database/dump.sql) 
-e um arquivo de [Seed](https://github.com/Jo-DK/Atelie/blob/main/Src/Database/seed.sql) dentro da pasta ## Src/Database/ ##.
+:checkered_flag: Contém um arquivo de [Dump](https://github.com/Jo-DK/Atelie/blob/main/Src/Database/dump.sql) 
+e um arquivo de [Seed](https://github.com/Jo-DK/Atelie/blob/main/Src/Database/seed.sql) dentro da pasta ** Src/Database/ **.
 
-Também precisará rodar o composer para utilizar do ## autoload PSR-4 ## e dos plugins de ## Router ## e ## DataLayer ##.
+:checkered_flag: Também precisará rodar o composer para utilizar do ** autoload PSR-4 ** e dos plugins de ** Router ** e ** DataLayer **.
 
-Há ainda um arquivo Json do [Postman](https://github.com/Jo-DK/Atelie/blob/main/Atelie.postman_collection.json) com alguns exemplos de uso das APIs.
+:checkered_flag: Há ainda um arquivo Json do [Postman](https://github.com/Jo-DK/Atelie/blob/main/Atelie.postman_collection.json) com alguns exemplos de uso das APIs.
 
 ## :checkered_flag: Starting ##
 
@@ -88,6 +74,26 @@ $ composer install
 
 # Na minha máquina não criei Virtual Host, usando apenas no  <http://localhost> mesmo, como podem ver no Postman
 ```
+
+## :sparkles: Features ##
+
+:heavy_check_mark: Feature 1;\ Para as Rotas eu utilizei um plugin da [CoffeCode](https://packagist.org/packages/coffeecode), para não reinventar a roda, 
+Os cadastros das Rotas estão em [rotas.php](https://github.com/Jo-DK/Atelie/blob/main/router.phpl)
+:heavy_check_mark: Feature 2;\ Sistema de [validação](https://github.com/Jo-DK/Atelie/tree/main/Src/Validation) dinânimo que permite o cadastro de diversas 
+[regras](https://github.com/Jo-DK/Atelie/blob/main/Src/Validation/Rules.php) como CPF, CNPJ e Email.
+:heavy_check_mark: Feature 3;\ As [ORMs](https://github.com/Jo-DK/Atelie/tree/main/Src/Models) utilizam um Datalayer também da CoffeCode, que também prove a classe Abstrata 
+e uma Conexão PDO.
+
+## :rocket: Technologies ##
+
+The following tools were used in this project:
+
+- [PHP](https://www.php.net)
+- [MySQL](https://www.mysql.com/)
+- [GIT](https://git-scm.com/)
+- [Composer](https://getcomposer.org)
+- [CoffeeCode-DataLayer](https://packagist.org/packages/coffeecode/datalayer)
+- [CoffeeCode-Router](https://packagist.org/packages/coffeecode/router)
 
 
 Made with :heart: by <a href="https://github.com/Jo-DK" target="_blank">Jonathan Nunes</a>
