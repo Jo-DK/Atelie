@@ -48,15 +48,26 @@ Este é apenas uma aplicação teste para um processo Seletivo, e contém:
 :checkered_flag: APIs CRUD Para Participantes,
 :checkered_flag: APIs de Adesão, para vincular e desvincular Participantes
 
+## :rocket: Technologies ##
+
+The following tools were used in this project:
+
+- [PHP](https://www.php.net)
+- [MySQL](https://www.mysql.com/)
+- [GIT](https://git-scm.com/)
+- [Composer](https://getcomposer.org)
+- [CoffeeCode-DataLayer](https://packagist.org/packages/coffeecode/datalayer)
+- [CoffeeCode-Router](https://packagist.org/packages/coffeecode/router)
+
 
 ## :white_check_mark: Requirements ##
 
 :checkered_flag: É necessário editar o arquivo [Config.php](https://github.com/Jo-DK/Atelie/blob/main/config.php), com os parâmetros do seu banco local.
 
 :checkered_flag: Contém um arquivo de [Dump](https://github.com/Jo-DK/Atelie/blob/main/Src/Database/dump.sql) 
-e um arquivo de [Seed](https://github.com/Jo-DK/Atelie/blob/main/Src/Database/seed.sql) dentro da pasta ** Src/Database/ **.
+e um arquivo de [Seed](https://github.com/Jo-DK/Atelie/blob/main/Src/Database/seed.sql) dentro da pasta **Src/Database/**.
 
-:checkered_flag: Também precisará rodar o composer para utilizar do ** autoload PSR-4 ** e dos plugins de ** Router ** e ** DataLayer **.
+:checkered_flag: Também precisará rodar o **composer** para utilizar do **autoload PSR-4** e dos plugins de **Router** e **DataLayer**.
 
 :checkered_flag: Há ainda um arquivo Json do [Postman](https://github.com/Jo-DK/Atelie/blob/main/Atelie.postman_collection.json) com alguns exemplos de uso das APIs.
 
@@ -77,23 +88,15 @@ $ composer install
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\ Para as Rotas eu utilizei um plugin da [CoffeCode](https://packagist.org/packages/coffeecode), para não reinventar a roda, 
+:heavy_check_mark: Feature 1: Para as Rotas eu utilizei um plugin da [CoffeCode](https://packagist.org/packages/coffeecode), para não reinventar a roda, 
 Os cadastros das Rotas estão em [rotas.php](https://github.com/Jo-DK/Atelie/blob/main/router.phpl)
-:heavy_check_mark: Feature 2;\ Sistema de [validação](https://github.com/Jo-DK/Atelie/tree/main/Src/Validation) dinânimo que permite o cadastro de diversas 
+
+:heavy_check_mark: Feature 2: Sistema de [validação](https://github.com/Jo-DK/Atelie/tree/main/Src/Validation) dinânimo que permite o cadastro de diversas 
 [regras](https://github.com/Jo-DK/Atelie/blob/main/Src/Validation/Rules.php) como CPF, CNPJ e Email.
-:heavy_check_mark: Feature 3;\ As [ORMs](https://github.com/Jo-DK/Atelie/tree/main/Src/Models) utilizam um Datalayer também da CoffeCode, que também prove a classe Abstrata 
-e uma Conexão PDO.
 
-## :rocket: Technologies ##
+:heavy_check_mark: Feature 3: As [ORMs](https://github.com/Jo-DK/Atelie/tree/main/Src/Models) utilizam um Datalayer também da CoffeCode, que também prove a classe Abstrata e uma Conexão PDO.
 
-The following tools were used in this project:
 
-- [PHP](https://www.php.net)
-- [MySQL](https://www.mysql.com/)
-- [GIT](https://git-scm.com/)
-- [Composer](https://getcomposer.org)
-- [CoffeeCode-DataLayer](https://packagist.org/packages/coffeecode/datalayer)
-- [CoffeeCode-Router](https://packagist.org/packages/coffeecode/router)
 
 
 Made with :heart: by <a href="https://github.com/Jo-DK" target="_blank">Jonathan Nunes</a>
